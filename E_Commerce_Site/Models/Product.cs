@@ -5,11 +5,15 @@ namespace E_Commerce_Site.Models
     public class Product
     {
         [Key]
-        [StringLength(15)]
+        [StringLength(50)]
         public string Id { get; set; }
-
+        
         [ForeignKey("BrandId")]
         public Brand Brand { get; set; } // generates FK
+
+
+        [Required]
+        public int BrandId { get; set; }
 
         [Column(TypeName = "timestamp")]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

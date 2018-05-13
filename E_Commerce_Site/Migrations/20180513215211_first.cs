@@ -27,8 +27,8 @@ namespace E_Commerce_Site.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<string>(maxLength: 15, nullable: false),
-                    BrandId = table.Column<int>(nullable: true),
+                    Id = table.Column<string>(maxLength: 50, nullable: false),
+                    BrandId = table.Column<int>(nullable: false),
                     CostPrice = table.Column<decimal>(type: "money", nullable: false),
                     Description = table.Column<string>(maxLength: 2000, nullable: false),
                     GraphicName = table.Column<string>(maxLength: 20, nullable: false),
@@ -46,7 +46,7 @@ namespace E_Commerce_Site.Migrations
                         column: x => x.BrandId,
                         principalTable: "Brands",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

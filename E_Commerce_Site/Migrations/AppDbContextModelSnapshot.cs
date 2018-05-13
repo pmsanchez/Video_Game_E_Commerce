@@ -43,9 +43,9 @@ namespace E_Commerce_Site.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(15);
+                        .HasMaxLength(50);
 
-                    b.Property<int?>("BrandId");
+                    b.Property<int>("BrandId");
 
                     b.Property<decimal>("CostPrice")
                         .HasColumnType("money");
@@ -85,7 +85,8 @@ namespace E_Commerce_Site.Migrations
                 {
                     b.HasOne("E_Commerce_Site.Models.Brand", "Brand")
                         .WithMany()
-                        .HasForeignKey("BrandId");
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
