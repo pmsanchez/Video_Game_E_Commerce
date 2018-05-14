@@ -49,10 +49,17 @@ namespace E_Commerce_Site
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
                 */
-
+                /*
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Data}/{action=Index}/{id?}");
+                */
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+
             });
         }
     }

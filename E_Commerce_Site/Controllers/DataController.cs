@@ -32,9 +32,9 @@ namespace E_Commerce_Site.Controllers
             {
                 msg = ex.Message;
             }
-            return Content(msg);
+            ViewData["msg"] = msg;
+            return View();
         }
-
 
         private async Task<String> getVideoGameJsonFromWeb()
         {

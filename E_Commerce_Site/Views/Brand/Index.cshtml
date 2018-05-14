@@ -1,0 +1,18 @@
+﻿@model BrandViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="col-xs-2" style="top:15%;">&nbsp;</div>
+<div class="text-center col-xs-8" style="border:double;margin-top:10%;">
+    <h4>Brands</h4>
+    <br />
+    <form asp-controller="Product" asp-action="Index" method="post">
+        <div class="col-sm-8 col-xs-12">
+            <select asp-for="Id" asp-items="@Model.GetBrands()"
+                    class="form-group form-control" onchange="this.form.submit();">
+                <option selected style="display:none;">Select Brand</option>
+            </select>
+        </div>
+        <div class="col-xs-2">&nbsp;</div>
+    </form>
+</div>
