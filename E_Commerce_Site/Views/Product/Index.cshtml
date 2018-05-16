@@ -4,7 +4,23 @@
 }
 <div class="col-sm-2 col-xs-1">&nbsp;</div>
 <div class="col-xs-10" style="position:relative;top:55px;">
-    <h4>Items In Brand</h4>
+    @{
+        switch (Model.Products.ElementAt(0).BrandId)
+        {
+            case 13:
+                <h4>Playstation Games</h4>
+                break;
+            case 14:
+                <h4>Nintendo Switch Games</h4>
+                break;
+            case 15:
+                <h4>Xbox One Games</h4>
+                break;
+            default:
+                <h4>Products By Brand - Unknown</h4>
+                break;
+        }
+    }
     <ul class="list-group col-sm-8 col-xs-12">
         @{
             foreach (Product item in Model.Products)
